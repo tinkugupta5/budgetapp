@@ -17,7 +17,8 @@ var UIController = (function(){
     var DOMstring = {
         inputType: '.add__type',
         inputDescription: '.add__value',
-        inputValue: '.add__value'
+        inputValue: '.add__value',
+        inputbtn: '.add__btn'
 
     };
 
@@ -26,10 +27,14 @@ var UIController = (function(){
             return{
             type: document.querySelector(DOMstring.inputType).value,
             description: document.querySelector(DOMstring.inputDescription).value,
-            value: document.querySelector( inputValue).value
+            value: document.querySelector(DOMstring.inputValue).value
             };
       
+        },
+        getDOMstring: function(){
+            return DOMstring;
         }
+
     };
 
 
@@ -43,6 +48,8 @@ var UIController = (function(){
 var controller = (function(budgetCtrl,UICtrl){
 
 //   some code 
+
+var DOM = UICtrl.getDOMstring();
 
 var ctrlAddItem = function()
 {
@@ -61,7 +68,7 @@ console.log("it works");
 
 }
 
-document.querySelector('.add__btn').addEventListener('click' , ctrlAddItem);
+document.querySelector().addEventListener('click' , ctrlAddItem);
 
 document.addEventListener('keypress',function(event){
 
